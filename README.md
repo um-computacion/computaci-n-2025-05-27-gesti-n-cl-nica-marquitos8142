@@ -4,9 +4,15 @@
 ## 👤 Información del Alumno
 
 ### 📋 Datos Personales
-- **Nombre y Apellido**: [Completar con nombre y apellido]
+- **Nombre y Apellido**: [Nicolas Marcos Beltran Lazo]
 - **Ciclo Lectivo**: 2025
-- **Carrera**: [Completar con nombre de la carrera]
+- **Carrera**: [Ing. Informatica]
+
+
+python -m unittest discover -s test
+
+
+
 
 ## ⏰ Información Importante sobre la Entrega
 
