@@ -12,7 +12,7 @@
 
 ### Para correr el codigo
 
-python -m main.py
+python main.py
 
 ### Para correr el los Tests
 
