@@ -8,11 +8,15 @@
 - **Ciclo Lectivo**: 2025
 - **Carrera**: [Ing. Informatica]
 
+## ⚠️Importante⚠️ Instrucciones de uso
+
+### Para correr el codigo
+
+python -m main.py
+
+### Para correr el los Tests
 
 python -m unittest discover -s test
-
-
-
 
 ## ⏰ Información Importante sobre la Entrega
 
