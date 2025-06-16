@@ -5,6 +5,7 @@ from src.modelos.medico import Medico
 from src.modelos.especialidad import Especialidad
 from src.modelos.turno import Turno
 
+
 class TestTurno(unittest.TestCase):
 
     def setUp(self):
@@ -47,6 +48,7 @@ class TestTurno(unittest.TestCase):
         self.assertIn("Dr. Alan Brito", resultado)
         self.assertIn("Dermatologia", resultado)
         self.assertIn("2025", resultado)
+
 
 if __name__ == "__main__":
     unittest.main()

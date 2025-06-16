@@ -2,13 +2,14 @@ import unittest
 from src.modelos.medico import Medico
 from src.modelos.especialidad import Especialidad
 
+
 class TestMedico(unittest.TestCase):
 
-    def setUp(self):#                         Codigo Normal
+    def setUp(self):  #                         Codigo Normal
         self.pediatria = Especialidad("Dermatologia", ["lunes", "miercoles", "viernes"])
         self.cardiologia = Especialidad("Odontologia", ["martes", "jueves"])
 
-    def test_crear_medico(self):  
+    def test_crear_medico(self):
         medico = Medico("Dr. Alan Brito", "MAT122333")
 
         self.assertEqual(medico.obtener_matricula(), "MAT122333")
@@ -21,7 +22,7 @@ class TestMedico(unittest.TestCase):
         medico.agregar_especialidad(self.pediatria)
         self.assertEqual(medico.obtener_especialidad_para_dia("lunes"), "Dermatologia")
         self.assertIn("Dermatologia", str(medico))
-    
+
     def test_duplicados_especialidad(self):
         medico = Medico("Dr. Carlitos", "MAT67890")
 
@@ -40,11 +41,11 @@ class TestMedico(unittest.TestCase):
 
     def test_nombre_vacio(self):
         with self.assertRaises(ValueError):
-            Medico("", "MAT33333")#   Campo vacio
+            Medico("", "MAT33333")  #   Campo vacio
 
     def test_matricula_vacia(self):
         with self.assertRaises(ValueError):
-            Medico("Dr. Jorge Nitales", "")#   Campo vacio
+            Medico("Dr. Jorge Nitales", "")  #   Campo vacio
 
     def test_str_(self):
         medico = Medico("Dr. Joseph Joestar", "MAT55555")
@@ -54,6 +55,7 @@ class TestMedico(unittest.TestCase):
         self.assertIn("Dr. Joseph Joestar", resultado)
         self.assertIn("MAT55555", resultado)
         self.assertIn("Dermatologia", resultado)
+
 
 if __name__ == "__main__":
     unittest.main()

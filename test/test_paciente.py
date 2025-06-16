@@ -1,6 +1,7 @@
 import unittest
 from src.modelos.paciente import Paciente
 
+
 class TestPaciente(unittest.TestCase):
 
     def setUp(self):
@@ -18,25 +19,25 @@ class TestPaciente(unittest.TestCase):
     def test_error_nombre_vacio(self):
         with self.assertRaises(ValueError) as ctx:
             Paciente("", self.dni, self.fecha_nacimiento)
-        self.assertIn("nombre", str(ctx.exception).lower()) # Campo Vacio
+        self.assertIn("nombre", str(ctx.exception).lower())  # Campo Vacio
 
     def test_error_dni_vacio(self):
         with self.assertRaises(ValueError) as ctx:
             Paciente(self.nombre, "", self.fecha_nacimiento)
-        self.assertIn("dni", str(ctx.exception).lower()) # Campo Vacio
+        self.assertIn("dni", str(ctx.exception).lower())  # Campo Vacio
 
     def test_error_fecha_vacia(self):
         with self.assertRaises(ValueError) as ctx:
             Paciente(self.nombre, self.dni, "")
-        self.assertIn("fecha", str(ctx.exception).lower()) # Campo Vacio
-        
+        self.assertIn("fecha", str(ctx.exception).lower())  # Campo Vacio
+
     def test_error_fecha_incompleta(self):
         with self.assertRaises(ValueError):
-            Paciente(self.nombre, self.dni, "2000-07-17") # falta de los /
+            Paciente(self.nombre, self.dni, "2000-07-17")  # falta de los /
 
     def test_error_dni_no_numerico(self):
         with self.assertRaises(ValueError):
-            Paciente(self.nombre, "ABC123", self.fecha_nacimiento) # Letras en DNI
+            Paciente(self.nombre, "ABC123", self.fecha_nacimiento)  # Letras en DNI
 
     def test_error_formato_fecha_incorrecto(self):
         with self.assertRaises(ValueError):
@@ -53,6 +54,6 @@ class TestPaciente(unittest.TestCase):
         self.assertIn(self.dni, salida)
         self.assertIn(self.fecha_nacimiento, salida)
 
+
 if __name__ == "__main__":
     unittest.main()
-
